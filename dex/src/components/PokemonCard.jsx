@@ -1,10 +1,29 @@
+import React from 'react';
+
+const pokemonList = [
+  {
+    name: "bulbasaur",
+    imgSrc: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+  },
+  {
+    name: "mew",
+  },
+];
+
 function PokemonCard() {
-    return (
-        <figure>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="Bulbizarre" />
-            <figcaption>bulbasaur</figcaption>
-        </figure>
-    )
-  }
-  
-  export default PokemonCard;
+
+  const pokemon = pokemonList[0];  
+
+  return (
+    <div className="pokemon-card">
+      <h1>{pokemon.name}</h1>
+      {pokemon.imgSrc ? (
+        <img src={pokemon.imgSrc} alt={pokemon.name} />
+      ) : (
+        <p>???</p>
+      )}
+    </div>
+  );
+}
+
+export default PokemonCard;
