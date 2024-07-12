@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #399056;
+    height: 20vh;
+    width: 10vw;
+    border-radius: 7px;
+    padding-bottom: 5vh;   
+}
+
+.container > figure > img {
+    background-color: aliceblue;
+    height: 18vh;
+    width: 8vw;
+    border-radius: 7px;
+
+}
+
+.title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: x-large;
+
+}
