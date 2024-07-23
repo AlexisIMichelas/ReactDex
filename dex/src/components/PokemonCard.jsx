@@ -1,7 +1,10 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './PokemonCard.module.css';
 
 function PokemonCard({ pokemon }) {
-    return <div className={styles.container}>
+    return (
+        <div className={styles.container}>
             <figure> 
                 {pokemon.imgSrc === undefined 
                     ? 
@@ -9,15 +12,21 @@ function PokemonCard({ pokemon }) {
                     :                 
                     <img 
                         src={pokemon.imgSrc}
-                        alt={pokemon.name}>
-                    </img>
+                        alt={pokemon.name}
+                    />
                 }
-
-                <figcaption className={styles.title} >{pokemon.name}</figcaption>
+                <figcaption className={styles.title}>{pokemon.name}</figcaption>
             </figure>
-            </div>
-  }
+        </div>
+    );
+}
 
+// Définir les types des props
+PokemonCard.propTypes = {
+    pokemon: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        imgSrc: PropTypes.string,
+    }).isRequired,
+};
 
-  
-  export default PokemonCard;
+export default PokemonCard;
